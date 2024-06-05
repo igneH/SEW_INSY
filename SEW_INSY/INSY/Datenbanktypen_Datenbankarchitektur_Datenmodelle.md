@@ -56,7 +56,7 @@
     - Mehrbenutzerunterstützung und Synchronisation
 - <b>Was bedeuten die Begriffe Konsistenz, Redundanz und Integrität?</b>
     - Konsistenz
-        - Daten nach jeder Transatkion in einem gültigen Zustand verbleiben
+        - Daten nach jeder Transatkion in einem gültigen, nicht widersprüchlichen Zustand verbleiben
     - Redundanz
         - überflüssige Datenkopien
             - negative Redundanz
@@ -65,7 +65,7 @@
                 - Datenverfügbarkeit und Ausfallsicherheit
             - wird durch Normalisierung reduziert
     - Integrität
-        - Genauigkeit und Vollständigkeit der Daten in eienr Datenbank
+        - Genauigkeit und Vollständigkeit der Daten in einer Datenbank
             - Datenintegrität
                 - Sicherstellung, dass die Daten korrekt und zuverlässig sind
             - Referenzielle Integrität
@@ -149,7 +149,13 @@
         - Neo4j
 
 - <b>Welche (DBMS) sind relevant?</b>
-    -  gleiche wie vorherige Frage?
+    -  populärsten ig?
+        - MySQL
+        - PostreSQL
+        - Microsoft SQL Server
+        - MongoDB
+        - Cassandra
+        - Redis
 
 - <b>Warum für welche Einsatzgebiete entstehen immer mehr Nischenprodukte?</b>
     - Spezialisierte Anforderungen
@@ -273,7 +279,7 @@
             - SELECT, INSERT, UPDATE, DELETE
 
 - <b>Wie reflektiert sich DDL/DML in der Architektur eines Datenbanksystems?</b>
-    - DLL
+    - DDL
         - Interne Ebene
             - Speicherstruktur
             - Speicherverwaltung
@@ -378,11 +384,15 @@
         - definiert die spezifische Art und Weise, wie eine Beziehung zwischen Entitäten modelliert wird, sowie ihre Eigenschaften und Beschränkungen
     
 - <b>Erklären Sie anhand des Modells Ausprägung und Modell.</b>
-    - ?
-- <b>Welche typen von Beziehungen können Entitäten eingehen?</b>
+    - Modell
+        - abstraktes Schema, Bauplan, Konstrukt der Datenstruktur, unabhängig von festen Werten, Entitätstypen, Beziehungstypen, Klasse in objektorientierter Programmierung
+    - Ausprägung
+        - Instanz eines Modells mit konkreten Werten, Entitäten, Beziehungen, Objekt in objektorientierter Programmierung
+          
+- <b>Welche Typen von Beziehungen können Entitäten eingehen?</b>
     - 1:1
     - 1:n
-    - m-n
+    - m:n
     - reflexive Beziehung
         - Beziehung zu sich selbst
     
@@ -399,7 +409,7 @@
 - <b>Wie werden diese umgesetzt?</b>
     - Spezialisierung
         - Identifizierung spezifischer Unterklassen
-        - Definieruen spezifischer Attribute und Beziehungen
+        - Definition spezifischer Attribute und Beziehungen
         - Vererbung nutzen
     - Generalisierung
         - Identifizierung gemeinsamer Attribute und Beziehungen
@@ -474,7 +484,7 @@
 - <b>Nenne Beispiele und Einsatzgebiete für jede Gruppe.</b>
     - Strukturdiagramme
         - Klassendiagramme
-            - Modellierung von Datenstrukturen in Softwareanwendugnen, Identifizierung vonKLassen und deren Attribute sowie Beziehungen zwischen Klassen
+            - Modellierung von Datenstrukturen in Softwareanwendugnen, Identifizierung von Klassen und deren Attribute sowie Beziehungen zwischen Klassen
     - Verhaltensdiagramme
         - Aktivitätsdiagramme
             - Verwendung zur Modellierung von Prozessen, Workflows und Geschäftsabläufen, einschließlich der Darstellung von Entscheidungsstrukturen und parallelen Aktivitäten
@@ -489,27 +499,27 @@
     - Problem, das bei der Integration von verschiednen Datebenmodellen oder Programmierparadigmen auftreten kann, insbesondere ziwschen objektorientierten Programmiersprachen und realtionalen Datenbanken
 
 - <b>Wie können Objekte am besten persistent gespeichert werden - geben Sie dazu ein Beispiel.</b>
-    - Objekte können am besten persisten gespeichert werden, indem sie in einer relationalen Datenbank gespiechert werden, was mithilfe von ORM Frameworks erfolgen kann
+    - Objekte können am besten persisten gespeichert werden, indem sie in einer relationalen Datenbank gespeichert werden, was mithilfe von ORM Frameworks erfolgen kann
     - Beispiel:
     ```Java
     public class UserDAO {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/example";
-    private static final String DB_USER = "username";
-    private static final String DB_PASSWORD = "password";
+        private static final String DB_URL = "jdbc:mysql://localhost:3306/example";
+        private static final String DB_USER = "username";
+        private static final String DB_PASSWORD = "password";
 
-    public void saveUser(User user) {
-        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "INSERT INTO users (name, age) VALUES (?, ?)";
-            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.setString(1, user.getName());
-                stmt.setInt(2, user.getAge());
-                stmt.executeUpdate();
+        public void saveUser(User user) {
+            try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+                String sql = "INSERT INTO users (name, age) VALUES (?, ?)";
+                try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                    stmt.setString(1, user.getName());
+                    stmt.setInt(2, user.getAge());
+                    stmt.executeUpdate();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
-}
     ```
 - <b>Erläutere die einzelnen Konzepte des Diagramms.</b>
     - ?
@@ -528,15 +538,16 @@
 
     - Festlegung von Primärschlüsseln: Ein Attribut oder eine Kombination von Attributen wird als Primärschlüssel für jede Tabelle festgelegt, um jede Zeile eindeutig zu identifizieren.
 
-    - Festlegung von Fremdschlüsseln: Beziehungen zwischen Klassen im UML-Modell werden zu Beziehungen zwischen Tabellen in der Datenbank. Fremdschlüssel werden verwendet, um die Beziehungen zwischen den Tabellen zu modellieren. Der Fremdschlüssel in einer Tabelle verweist auf den Primärschlüssel einer anderen Tabelle und stellt so die Beziehung zwischen den beiden Tabellen her.
+    - Festlegung von Fremdschlüsseln: Beziehungen zwischen Klassen im UML-Modell werden zu Beziehungen zwischen Tabellen in der Datenbank. Fremdschlüssel werden verwendet, um die Beziehungen zwischen den Tabellen zu modellieren. Der Fremdschlüssel in einer Tabelle verweist auf den Primärschlüssel einer anderen       Tabelle und stellt so die Beziehung zwischen den beiden Tabellen her.
 
-    - Umsetzung von Assoziationen und Aggregationen: Assoziationen und Aggregationen im UML-Modell werden ebenfalls durch Beziehungen zwischen Tabellen im Relationsmodell dargestellt. Je nach Art der Beziehung werden entsprechende Fremdschlüssel verwendet, um die Beziehung zwischen den beteiligten Tabellen zu modellieren.
+    - Umsetzung von Assoziationen und Aggregationen: Assoziationen und Aggregationen im UML-Modell werden ebenfalls durch Beziehungen zwischen Tabellen im Relationsmodell dargestellt. Je nach Art der Beziehung werden entsprechende Fremdschlüssel verwendet, um die Beziehung zwischen den beteiligten Tabellen zu        modellieren.
 
-    - Normalisierung: Das Relationsmodell wird normalisiert, um Redundanzen zu reduzieren und die Integrität der Datenbank zu verbessern. Dies kann durch Aufteilen von Tabellen, Kombinieren von Tabellen oder andere Techniken erreicht werden, um die Datenbank in eine effiziente und gut strukturierte Form zu bringen.
+    - Normalisierung: Das Relationsmodell wird normalisiert, um Redundanzen zu reduzieren und die Integrität der Datenbank zu verbessern. Dies kann durch Aufteilen von Tabellen, Kombinieren von Tabellen oder andere Techniken erreicht werden, um die Datenbank in eine effiziente und gut strukturierte Form zu           bringen.
 
     - Erstellung von SQL-Skripten: Basierend auf dem Relationsmodell werden SQL-Skripte erstellt, um die Tabellen, Beziehungen, Indizes und andere Objekte in der Datenbank zu erstellen.
 
     - Datenbankimplementierung: Die SQL-Skripte werden auf einem Datenbanksystem ausgeführt, um das Datenbankdesign zu implementieren und die Datenbank zu erstellen.
+      
 - <b>Welche Elemente/Teile des Diagramms werden nicht umgesetzt bzw. gebraucht.</b>
     - Interaktionen und Squenzdiagramme
     - Aktivitätsdiagramme
@@ -544,4 +555,4 @@
 - <b>Vergleichen Sie ER- und UML Diagramm.</b>
     - ?
 - <b>Welche Vorteile bietet das UML-Modell gegenüber dem ER-Modell?</b>
-- ?
+    - ?
