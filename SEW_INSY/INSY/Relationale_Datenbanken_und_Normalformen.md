@@ -186,13 +186,13 @@
     - 1NF
         - Bedingung: Alle Attribute in einer Tabelle müssen atomar sein
         - Transformationsschritte
-            - identifziere wiederholte Gruppen von Attributen und trenne sie in seperate Tabellen auf
-            - Jede Ziele der neuen Tabellen sollte einen eindeutinge Schlüssel ahben, der die Beziehung zur ursprünglichen Tabelle erstellt
+            - Identifziere wiederholte Gruppen von Attributen und trenne sie in seperate Tabellen auf
+            - Jede der neuen Tabellen sollte einen eindeutinge Schlüssel haben, der die Beziehung zur ursprünglichen Tabelle herstellt
             - Entferne redundante Attribute aus der ursprünglichen Tabelle und verweise stattdessen auf die neuen Tabellen über Fremdschlüsselbeziehungen.
     - 2NF
         - Bedingung: Tabelle muss in der 1NF sein
         - Transformationsschritte
-            - Überürofe, ob alle Nicht-Schlüsselattribute von einem Teil des Primärschlüssels abhängen
+            - Überprüfe, ob alle Nicht-Schlüsselattribute von einem Teil des Primärschlüssels abhängen
             - Falls nicht, teile die Tabelle in mehrere Tabellen auf, wobei jede Tabelle eine Teilemenge der ursprünglichen Attribte enthält, die von einem bestimmten Teil des Primärschlüssels abhängen
             - Füge Fremdschlüsselbeziehungen hinzu, um die Beziehung zwischen den neuen Tabellen und der ursprünglichen Tabelle herzustellen
     - 3NF
@@ -200,7 +200,7 @@
         - Transformationsschritte
             - Identifiziere transitive Abhängigkeiten zwischen Nicht-Schlüsselattributen, die nicht direkt vom Primärschlüssel abhängen
             - Teile die Tabell erneut auf, um diese transitive Abhängigkeiten zu eliminieren, indem du die betroffenen Attribute in seperate Tabellen verschiebst
-            - Verwende Fremdschlüsselbeziehungen, um die Beziehung zwischen den neuen Tabellen und der ursprünglichen tabelle zu definieren
+            - Verwende Fremdschlüsselbeziehungen, um die Beziehung zwischen den neuen Tabellen und der ursprünglichen Tabelle zu definieren
 - Welche Vor- bzw. Nachteile ergeben sich, wenn sich ein ER-Modell in der 3. NF berfindet?
     - Vorteile
         - Reduzierung von Redundanz
