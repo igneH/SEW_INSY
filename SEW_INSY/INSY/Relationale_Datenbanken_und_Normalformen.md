@@ -17,13 +17,13 @@
 
 - Was bedeutet "Attribut", "Wertebereich", "funktionale Abhängigkeit" und "voll funkionale Abhängigkeit"?
     - Attribut
-        - Eigenschaft oder CHarakteristik, die ein Teil der Informationen ausmacht, die ine einer Datenbank gespeichert sind (Spalte in einer Tabelle)
+        - Eigenschaft oder Charakteristik, die ein Teil der Informationen ausmacht, die in einer Datenbank gespeichert sind (Spalte in einer Tabelle)
     - Wertebereich
-        - der Wertebereich eines Attributs bezeichnet die Menge aller möglichen Werte, die dieses Attribut annhemen kann
+        - der Wertebereich eines Attributs bezeichnet die Menge aller möglichen Werte, die dieses Attribut annehmen kann
     - funktionale Abhängigkeit
         - wenn der Wert eines Attributs A den Wert eines Attributs B eindeutig bestimmt, gibt es eine funktionale Abhängigkeit von A nach B
     - voll funktionale Abhängigkeit
-        - wenn ein Attribut nur von der gesamten Kombination anderer Attribute abhängt und nicht ovn einem Teil dieser Kombination
+        - wenn ein Attribut nur von der gesamten Kombination anderer Attribute abhängt und nicht von einem Teil dieser Kombination
 
 - Welche Eigenschaften haben Relationen?
     - Tupel (Zeilen)
@@ -46,21 +46,23 @@
         - Differenz (Difference)
 
 - Wie sind diese definiert?
-    - ?
+    - https://de.wikipedia.org/wiki/Relationale_Algebra#Operationen
 
 ## Grundlagen des relationalen Datenmodells
 - Was ist die Ausgangsbasis für die Umsetzung eines relationealen Modells?
     - die Annahme, dass Daten in Form von Relationen organisiert werden können
+    - Konzeptuelles Modell (ER-Modell)?
+    - Logisches Modell (relationale Tabellen)?
 
 - Wieso brauche ich beide Modelle?
-    - ?
+    - ? Logisches Modell entwickelt sich aus konzeptuellem Modell
 - Erklären Sie die wichtigsten Teile des relationalen Modells (Attribut, Tupel, Domäne, Relation, Relationenschema)
     - Attribut
         - Eigenschaft oder Merkmal, das einen bestimmten Aspekt der Daten repräsentiert 
     - Tupel
         - eine einzelne Zeile oder Datensatz in einer Tabelle einer relationalen Datenbank
     - Domäne
-        - definiert den zulässigen Wertebereich oder die Art der Daten, die für ein bestimmtes Attribut in einer tabellle einer relationalen Datenbank zulässig sind
+        - definiert den zulässigen Wertebereich oder die Art der Daten, die für ein bestimmtes Attribut in einer Tabelle einer relationalen Datenbank zulässig sind
     - Relation
         - eine mathematische Darstellung eienr Tabelle in einer relationalen Datenbank
     - Relationenschema
@@ -70,11 +72,11 @@
     - Information Rule
         - Alle Informationen in einer relationale Datenbank müssen in Form von Werten in Zellen einer Tabelle dargestellt werden
     - Guaranteed Access Rule
-        - Jeder einzelner Datensatz muss durch die Kombination von Wert und SPaltenname eindeutig identifizierbar sein
-    - Systematic Treatemnt of Null
+        - Jeder einzelne Datensatz muss durch die Kombination von Wert und Spaltenname eindeutig identifizierbar sein
+    - Systematic Treatment of Null
         - eine relationale Datenbank muss die Behandlung von Null-Werten unterstützten, um eine flexible Datenverarbeitung zu ermöglichen
-    - View UPdating Rule
-        - änderungen an den Daten in der Datenbank sollten sich konsisten in allen Ansichten (Views) widerspielen, die auf diese Datenbank zugreifen
+    - View Updating Rule
+        - Änderungen an den Daten in der Datenbank sollten sich konsisten in allen Ansichten (Views) widerspielen, die auf diese Datenbank zugreifen
     - High-level Insert, Update und Delete
         - Das DBMS sollte Operationen zum Einfügen, Aktualisieren und Löschen von Datensätzen bereitstellen, ohne dass der Bentuzer direkt mit den physischen Speicherstrukturen arbeiten muss
     - Physical Data independence
@@ -88,7 +90,7 @@
     - Primärschlüssel
         - eine Spalte oder Kombination von Spalten in einer Tabelle, die eindeutig jedes Tupel in dieser Tabelle identifiziert
     - Fremschlüssel
-        - eine Spalte oder Kombination von Spalten in einer Tabelle, die auf den Primärschlüssel einer anderen Tabelle verweist
+        - eine Spalte oder Kombination von Spalten in einer Tabelle, die auf den Primärschlüssel einer anderen Tabelle verweist (Anm.: Ziel muss nicht Primärschlüssel sein, sondern kann auch ein/e andere/s, eindeutige/s Attribut/Attributskombination sein. Üblich aber Primärschlüssel)
 
 - Warum brauche ich Fremdschlüssel?
     - Beziehungen zwischen Tabellen herzustellen
@@ -104,10 +106,10 @@
     - Nicht NULL
 
 - Wo stoßen relationale Datenmodelle an ihre Grenzen?
-    - Komplexe Datenstrukturen, die nicht gut in tabellarischer FOrm dargestellt werden können
-    - Skalierbarkeit
+    - Komplexe Datenstrukturen, die nicht gut in tabellarischer Form dargestellt werden können
+    - Skalierbarkeit (keine horizontale Skalierung)
     - Flexibilität
-    - Komplexe Abfragen
+    - Komplexe Abfragen (?)
     - Semistrukturierte Daten
 
 - Warum ist das relationale Datenmodell so erfolgreich?
@@ -131,7 +133,7 @@
     - Grpahdatenmodell
 - Zählen Sie mindestens drei auf und gehen Sie kurz auf die Strukturmerkmale ein.
     - Relationales Datenmodell
-        - Sturktur: Organisiert Daten in tabellen, wobei jede Tabelle Attribute und Tupel entählt
+        - Sturktur: Organisiert Daten in Tabellen, wobei jede Tabelle Attribute und Tupel enthält
         - Beziehungen: Beziehungen zwischen den Tabellen werden durch Schlüssel definiert, wie z.B. Primärschlüssel und Fremdschlüssel
     - Objektorientiertes Datenmodell
         - Struktur: Daten werden als Objekte dargestellt, die sowohl Attribute als auch Verhalten (Mehtoden) enthalten können
@@ -184,13 +186,13 @@
     - 1NF
         - Bedingung: Alle Attribute in einer Tabelle müssen atomar sein
         - Transformationsschritte
-            - identifziere wiederholte Gruppen von Attributen und trenne sie in seperate Tabellen auf
-            - Jede Ziele der neuen Tabellen sollte einen eindeutinge Schlüssel ahben, der die Beziehung zur ursprünglichen Tabelle erstellt
+            - Identifziere wiederholte Gruppen von Attributen und trenne sie in seperate Tabellen auf
+            - Jede der neuen Tabellen sollte einen eindeutinge Schlüssel haben, der die Beziehung zur ursprünglichen Tabelle herstellt
             - Entferne redundante Attribute aus der ursprünglichen Tabelle und verweise stattdessen auf die neuen Tabellen über Fremdschlüsselbeziehungen.
     - 2NF
         - Bedingung: Tabelle muss in der 1NF sein
         - Transformationsschritte
-            - Überürofe, ob alle Nicht-Schlüsselattribute von einem Teil des Primärschlüssels abhängen
+            - Überprüfe, ob alle Nicht-Schlüsselattribute von einem Teil des Primärschlüssels abhängen
             - Falls nicht, teile die Tabelle in mehrere Tabellen auf, wobei jede Tabelle eine Teilemenge der ursprünglichen Attribte enthält, die von einem bestimmten Teil des Primärschlüssels abhängen
             - Füge Fremdschlüsselbeziehungen hinzu, um die Beziehung zwischen den neuen Tabellen und der ursprünglichen Tabelle herzustellen
     - 3NF
@@ -198,7 +200,7 @@
         - Transformationsschritte
             - Identifiziere transitive Abhängigkeiten zwischen Nicht-Schlüsselattributen, die nicht direkt vom Primärschlüssel abhängen
             - Teile die Tabell erneut auf, um diese transitive Abhängigkeiten zu eliminieren, indem du die betroffenen Attribute in seperate Tabellen verschiebst
-            - Verwende Fremdschlüsselbeziehungen, um die Beziehung zwischen den neuen Tabellen und der ursprünglichen tabelle zu definieren
+            - Verwende Fremdschlüsselbeziehungen, um die Beziehung zwischen den neuen Tabellen und der ursprünglichen Tabelle zu definieren
 - Welche Vor- bzw. Nachteile ergeben sich, wenn sich ein ER-Modell in der 3. NF berfindet?
     - Vorteile
         - Reduzierung von Redundanz
