@@ -129,7 +129,7 @@
         strcpy(second->name, "Jim");
         second->id = 2;
         second->next = NULL;
-        first->next = second;
+        head->next = second;
     }
     ```
     - löschen eines Elements
