@@ -68,19 +68,17 @@ fun PreviewGreeting() {
     - Aktivität wird zerstört.
 ## Design Patterns
 ### Singelton
-- ein Entwurfsmuster, das sicherstellt, dass eine Klause genau eine Instanz hat und bietet einen globalen Zugriffspunkt auf diese Instanz
+- ein Entwurfsmuster, das sicherstellt, dass eine Klasse genau eine Instanz hat und bietet einen globalen Zugriffspunkt auf diese Instanz
     - z.B. für Konfigurationseinstellungen, Datenbankverbindungen
 - schützt die Instanz überschrieben zu werden
 - Struktur:
 ![Singelton Struktur](img/Singelton.png)
-    
 ### Abstract Factory
 - Erstellung von Familien verwandter oder abhängiger Objekte, ohne deren konkrete Klassen anzugeben
 ![Singelton Struktur](img/AbstractFactory.png)
 ### Prototype
 - erstellt Klone eines bestehenden Objektes
 ![Prototype Struktur](img/Prototype.png)
-
 ## Structual Patterns
 ### Adapter
 - Der Adapter ist ein Entwurfsmuster, das es ermöglicht, Schnittstellen inkompatibler Klassen zusammenzuführen. Dieses Muster wird verwendet, wenn Klassen zusammenarbeiten sollen, deren Schnittstellen nicht zueinander passen.

@@ -108,7 +108,7 @@ public void open() {
 ```Java
 public void createDB() throws SQLException {
         open();
-        String stmt = "CREATE TABLE IF NOT EXSITS Person(" +
+        String stmt = "CREATE TABLE IF NOT EXISTS Person(" +
                 "id int primary key," +
                 "name varchar(25)" +
                 ")";

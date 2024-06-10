@@ -77,7 +77,7 @@
     - Datenbank
         - organisierte Sammlung von strukturierten Daten, die in einem computerbasierten System gespeichert und verwaltet werden
     - Datenmodell
-        - ein konzeptionelles Werkzeug, das die Struktur und die Beziehungen der Daten in einer Datenbank beschreibt
+        - ein konzeptionelles Werkzeug, dass die Struktur und die Beziehungen der Daten in einer Datenbank beschreibt
             - definiert wie Daten organisiert und wie die verschiedenen Datenenlemente miteinander verbunden sind.
         - Arten von Datenmodellen
             - Relationalies Datenmodell: Organisiert Daten in Tabellen (Relationen) mit Zeilen (Tupel) und Spalten (Attribute/Felder)
@@ -132,7 +132,16 @@
         - Nachteile: Eingeschränkte Abfragemöglichkeiten, nicht geeignet für komplexe Datenstrukturen
 
 - <b>Erläutern Sie die geschichtliche und technische Entwicklung.</b>
-    - ?
+    - 1950er Daten auf Magnetband und Lochkarten gespeichert
+    - 1960er erste Datenbankmodelle: hierarchische Modell und Netzwerkmodell
+    - 1970er Edgar F. Codd veröffentlichte relationale Modell
+        - SQL
+        - erstes RDBMS
+    - 1980er - 1990er Objektorientierte Datenbanken
+    - 1990er Data Warehousing
+        - OLAP
+    - 2000er NoSQL und Big Data
+    - 2010er - heute Cloud Datenbanken, NewSQL, In-Memory-Datenbanken
 - <b>Welche (DBMS) gibt es derzeit noch am Markt?</b>
     - RDBMS
         - Oracle Database
@@ -147,6 +156,9 @@
         - Redis
         - CouchDB
         - Neo4j
+    - NewSQL-Datenbanken
+        - Google Spanner
+        - CockroachDB
 
 - <b>Welche (DBMS) sind relevant?</b>
     -  populärsten ig?
@@ -183,7 +195,7 @@
         - Flexibilität
             - bieten größere Felexibilität und Anpassungsfähigkeit an die spezifischen Bedürfnisse des Unternehmens
     - Nachteile
-        - EngeschränkteBenutzerbasis
+        - Engeschränkte Benutzerbasis
             - weniger Community-Support und weniger umfangreiche Dokumentationen
         - Kosten
             - maßgeschneiderte Lösungen und spezialisierte Dienstleistungen erfordern
@@ -191,7 +203,6 @@
             - nicht so skalierbar wie allgemeine Produkte, da sie für spezifische Anwendungsfälle optimiert sind
         - Wartung und Updates
             - da die Entwicklerressourcen begrent sind und spezifische Anforderungen bedient werden müssen
-
 
 ## Architektur von Datenbanksystemen
 - <b>Was versteht man unter der "Drei Schichten Architektur" nach ANSI-SPARC?</b>
@@ -231,7 +242,7 @@
         - Leistung
         - Datensicherheit
         - Kompatibilität
-        - Warung und Wiederherstellung
+        - Wartung und Wiederherstellung
 
 - <b>Wo wird die Struktur der abzuspeichernden Informationen hinterlegt?</b>
     - in der Regel in einem DBMS hinterlegt
@@ -249,7 +260,7 @@
     - Validierungen dund Geschäftslogik
         - Datenvalidierung
         - Geschäftslogik
-- <b>Wie können komplexe Strukturen vereinfacht dargestllt werden?</b>
+- <b>Wie können komplexe Strukturen vereinfacht dargestellt werden?</b>
     - Abstraktion
         - Klassendiagramme
     - Visualisierung
@@ -341,7 +352,7 @@
     8. Überprüfung und Validierung
         - Sicherstellen, dass das ER-Modell korrekt und vollständig ist
     9. Normalisierung
-        - Vermeidung von Redundanzenund Inkosistenzen in der Datenbank
+        - Vermeidung von Redundanzenund Inkonsistenzen in der Datenbank
     10. Implementierung
         - Überführung des ER-Modells in ein Datenbankschema
     
@@ -542,7 +553,7 @@
 
     - Umsetzung von Assoziationen und Aggregationen: Assoziationen und Aggregationen im UML-Modell werden ebenfalls durch Beziehungen zwischen Tabellen im Relationsmodell dargestellt. Je nach Art der Beziehung werden entsprechende Fremdschlüssel verwendet, um die Beziehung zwischen den beteiligten Tabellen zu        modellieren.
 
-    - Normalisierung: Das Relationsmodell wird normalisiert, um Redundanzen zu reduzieren und die Integrität der Datenbank zu verbessern. Dies kann durch Aufteilen von Tabellen, Kombinieren von Tabellen oder andere Techniken erreicht werden, um die Datenbank in eine effiziente und gut strukturierte Form zu           bringen.
+    - Normalisierung: Das Relationsmodell wird normalisiert, um Redundanzen zu reduzieren und die Integrität der Datenbank zu verbessern. Dies kann durch Aufteilen von Tabellen, Kombinieren von Tabellen oder andere Techniken erreicht werden, um die Datenbank in eine effiziente und gut strukturierte Form zu bringen.
 
     - Erstellung von SQL-Skripten: Basierend auf dem Relationsmodell werden SQL-Skripte erstellt, um die Tabellen, Beziehungen, Indizes und andere Objekte in der Datenbank zu erstellen.
 

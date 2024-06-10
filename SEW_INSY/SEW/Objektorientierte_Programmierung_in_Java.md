@@ -41,7 +41,6 @@
             System.out.println("Year: " + year);
         }
 
-
         // Getter und Setter Methoden
     }
     ```
@@ -63,22 +62,22 @@
 5. Interfaces und Abstrakte Klassen
     - Abstrakte Klassen
         - können nicht instanziiert werden und können abstrakte Methoden enthalten, die in den Unterklassen implementiert werden müssen
-    ```Java
-    abstract class Animal {
-        public abstract void makeSound(); // Abstrakte Methode
+        ```Java
+        abstract class Animal {
+            public abstract void makeSound(); // Abstrakte Methode
 
-        public void eat() {
-            System.out.println("This animal eats food");
+            public void eat() {
+                System.out.println("This animal eats food");
+            }
         }
-    }
 
-    class Dog extends Animal {
-        @Override
-        public void makeSound() {
-            System.out.println("Bark");
+        class Dog extends Animal {
+            @Override
+            public void makeSound() {
+                System.out.println("Bark");
+            }
         }
-    }
-    ```
+        ```
     - Interfaces
         - definieren Methoden, die von einer Klasse implementiert werden müssen
         - eine Klasse kann mehere Interfaces implementieren
