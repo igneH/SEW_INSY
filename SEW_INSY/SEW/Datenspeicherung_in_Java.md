@@ -20,7 +20,6 @@
             ```Java
             LinkedList<String> food = new LinkedList<>();
             food.add("Schnitzel");
-            food.add("Schnitzel");
             food.add("Burger");
             System.out.println("Index 0: " + food.get(0));
             food.remove(0);
